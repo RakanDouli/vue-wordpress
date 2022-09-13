@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>werken By</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="filter_section">
+
+            <div class="search-filter">
+                <input type="text" v-model="search" placeholder="search blogs" />
+            </div>
+            <div id="checkboxes-filter Catergories">
+                <h2>Catergories</h2>
+                <div class="checkbox_field" v-for="([key, value]) in setOfCategories" :key="key">
+                    <input type="checkbox" :value="key" v-model="checkboxes">
+                    <div class="checkbox_labels">
+                        <label>{{key}}</label>
+                        <label> {{value}}</label>
+                    </div>
+                </div>
+            </div>
+            <div id="checkboxes-filter r">
+                <h2>Catergories</h2>
+                <div class="checkbox_field" v-for="([key, value]) in setOfRegios" :key="key">
+                    <input type="checkbox" :value="key" v-model="checkboxes">
+                    <div class="checkbox_labels">
+                        <label>{{key}}</label>
+                        <label> {{value}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="job_cards">
+            <template>
+                <div class="loading_items" v-if="!jobs.length">loading</div>
+                <div class="empty_search" v-if="!filteredJobs.length">Geen match met vacatures</div>
+                <div v-for="job in filteredJobs" :key="job.id" class="job">
+                    <div class="job_card">
+                        <div class="job_image">
+                            <img :src="job.avatar" alt="">
+                        </div>
+                        <ul>
+                            <li> {{job.first_name}} </li>
+                            <li> {{job.last_name}} </li>
+                            <li> {{job.email}} </li>
+                        </ul>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./jobs.js"></script>
+    <script>
+    </script>
+
+</body>
+
+</html>

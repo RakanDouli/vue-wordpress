@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+template {
+    display: block;
+}
+
+#app {
+    display: flex;
+}
+
+.filter_section {
+    padding: 40px 30px;
+    height: 100vh;
+    background-color: #AAAAAA;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+label {
+    margin-left: 10px;
+}
+
+.job_cards {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.job_card {
+    width: 100%;
+    display: flex;
+    padding: 20px 30px;
+}
+
+.checkbox_field {
+    display: flex;
+}
+
+.checkbox_labels {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
